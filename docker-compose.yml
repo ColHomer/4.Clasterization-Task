@@ -3,8 +3,9 @@ version: "3.9"
 services:
   rfm-api:
     build: .
+    container_name: rfm-api
     ports:
       - "8000:8000"
     volumes:
       - ./output:/app/output
-ч
+    command: uvicorn main:app --host 0.0.0.0 --port 8000
